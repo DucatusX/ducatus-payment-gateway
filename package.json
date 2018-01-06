@@ -1,0 +1,57 @@
+{
+  "name": "ducatus-payment",
+  "description": "Ducatus payment gateway",
+  "version": "0.0.0",
+  "homepage": "",
+  "main": "src",
+  "keywords": [
+    "feathers"
+  ],
+  "author": {
+    "name": "",
+    "email": ""
+  },
+  "contributors": [],
+  "bugs": {},
+  "directories": {
+    "lib": "src",
+    "test": "test/"
+  },
+  "engines": {
+    "node": "^9.0.0",
+    "yarn": ">= 0.18.0"
+  },
+  "scripts": {
+    "test": "yarn run eslint && yarn run mocha",
+    "eslint": "eslint src/. test/. --config .eslintrc.json",
+    "start": "node src/",
+    "mocha": "mocha test/ --recursive --exit"
+  },
+  "dependencies": {
+    "@feathersjs/configuration": "^1.0.1",
+    "@feathersjs/errors": "^3.2.0",
+    "@feathersjs/express": "^1.1.2",
+    "@feathersjs/feathers": "^3.0.2",
+    "@feathersjs/socketio": "^3.0.1",
+    "artillery": "^1.6.0-12",
+    "bitcore-lib": "^0.15.0",
+    "bluebird": "^3.5.1",
+    "compression": "^1.7.1",
+    "cors": "^2.8.4",
+    "ducatuscore-lib": "git+ssh://git@github.com/Ducatus/ducatuscore-lib.git",
+    "insight-watcher": "git+ssh://git@github.com/Ducatus/insight-watcher.git",
+    "feathers-nedb": "^3.0.0",
+    "helmet": "^3.9.0",
+    "nedb": "^1.8.0",
+    "redis": "^2.8.0",
+    "serve-favicon": "^2.4.5",
+    "valid-url": "^1.0.9",
+    "winston": "^2.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.14.0",
+    "mocha": "^4.0.1",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}

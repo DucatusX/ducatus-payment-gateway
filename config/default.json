@@ -1,0 +1,32 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "addressExpiresInMilli": 60000,
+  "btc_params": {
+	  "crypto_symbol": "BTC",
+	  "insight_servers": [
+		  "https://insight.bitpay.com/", 
+		  "https://www.localbitcoinschain.com/", 
+		  "https://search.bitaccess.co/"
+	  ],
+	  "insight_api_endpoints": [
+		  "https://insight.bitpay.com/api/", 
+		  "https://www.localbitcoinschain.com/api/"
+	  ]
+  },
+  "dtc_params": {
+	  "crypto_symbol": "DTC",
+	  "insight_servers": [
+		  "http://insight.ducatus.io/"
+	  ],
+	  "insight_api_endpoints": [
+		  "http://insight.ducatus.io/insight-lite-api/"
+	  ]
+  },
+  "nedb": "../data"
+}

@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+		<title>Ducatus Payment Example Frontend</title>
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="//cdn.rawgit.com/feathersjs/feathers-chat/v0.2.0/public/base.css">
+		<link rel="stylesheet" href="//cdn.rawgit.com/feathersjs/feathers-chat/v0.2.0/public/chat.css">
+	</head>
+	<body>
+		<form class="form-horizontal">
+			<fieldset>
+
+				<!-- Form Name -->
+				<legend>Generate API Key</legend>
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="ex_pub_key">Extended Public Key</label>  
+					<div class="col-md-4">
+						<input id="ex_pub_key" name="ex_pub_key" type="text" placeholder="xpub..." class="form-control input-md">
+
+					</div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="ipn">IPN</label>  
+					<div class="col-md-4">
+						<input id="ipn" name="ipn" type="text" placeholder="https://example.com/payment_notification" class="form-control input-md">
+
+					</div>
+				</div>
+
+				<!-- Multiple Radios -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="crypto_symbol">Crytpo Symbol</label>
+					<div class="col-md-4">
+						<div class="radio">
+							<label for="crypto_symbol-0">
+								<input type="radio" name="crypto_symbol" id="crypto_symbol-0" value="BTC" checked="checked">
+								BTC
+							</label>
+						</div>
+						<div class="radio">
+							<label for="crypto_symbol-1">
+								<input type="radio" name="crypto_symbol" id="crypto_symbol-1" value="DTC">
+								DTC
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<!-- Button -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="singlebutton">Single Button</label>
+					<div class="col-md-4">
+						<button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+
+		<div id="app" class="flex flex-column"></div>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.js"></script>
+		<script src="//unpkg.com/@feathersjs/client@^3.0.0/dist/feathers.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>

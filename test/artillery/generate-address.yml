@@ -1,0 +1,13 @@
+config:
+  target: 'http://localhost:3030'
+  phases:
+    - duration: 30
+      arrivalRate: 20
+  defaults:
+    headers:
+      Content-Type: 'application/json'
+scenarios:
+  - flow:
+    - post:
+        url: "/request_payment"
+
