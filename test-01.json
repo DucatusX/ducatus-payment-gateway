@@ -1,5 +1,0 @@
-yarn run v1.3.2
-$ node src/
-info: Feathers application started on http://localhost:3030
-Flushed database
-Transaction:  { address: '1BG1Kh5mhKyG2JZ7anmv48HnQbouccioQH', amount: 5886 }
