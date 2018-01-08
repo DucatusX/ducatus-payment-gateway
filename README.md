@@ -6,14 +6,20 @@
 
 Gettins started is straightforward
 
-1. Make sure you have [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
+1. Make sure you have [docker](https://www.docker.com/) (or [redis](https://redis.io/)), [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
 2. Install your dependencies
 
     ```
     cd path/to/ducatus-payment; npm install
     ```
 
-3. Start the payment gateway
+3. Start a redis container (or simply have a running instance):
+
+    ```
+    docker run -p "6379:6379" -d redis
+    ```
+
+4. Start the payment gateway
 
     ```
     npm start
