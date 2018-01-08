@@ -1,7 +1,6 @@
 // Use this hook to manipulate incoming or outgoing data.
 // For more information on hooks see: http://docs.feathersjs.com/api/hooks.html
-var redis = require('redis'),
-	client = redis.createClient();
+var redis = require('redis');
 var bluebird = require('bluebird');
 
 bluebird.promisifyAll(redis.RedisClient.prototype);
@@ -13,7 +12,7 @@ function recycle_address_index(context) {
 	context.app.service('request_payment').patch(context.result._id, 
 		{ valid: false }).then(patch => {
 			console.log(patch);
-			client.lpush(`queue:${context.result.api_key}`, context.result.derived_index);
+			redisClient.lpush(`queue:${context.result.api_key}`, context.result.derived_index);
 		});
 
 }
@@ -28,7 +27,7 @@ function send_to_ipn(context, tx) {
 module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
 	return async context => {
 		setTimeout(recycle_address_index, context.app.get('addressExpiresInMilli'), context);
-		client.multi()
+		context.app.redisClient.multi()
 			.set(`address:${context.data.address}`, context.result._id)
 			.expire(`address:${context.data.address}`, context.app.get('addressExpiresInMilli') * .00105)
 			.exec();

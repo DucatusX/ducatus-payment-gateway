@@ -28,5 +28,6 @@
 		  "http://insight.ducatus.io/insight-lite-api/"
 	  ]
   },
+  "redis": "redis://redis:6379",
   "nedb": "../data"
 }

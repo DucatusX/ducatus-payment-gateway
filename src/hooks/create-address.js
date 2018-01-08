@@ -3,8 +3,7 @@
 var bitcore = require('bitcore-lib');
 var ducatuscore = require('ducatuscore-lib');
 
-var redis = require('redis'),
-	client = redis.createClient();
+var redis = require('redis')
 var bluebird = require('bluebird');
 bluebird.promisifyAll(redis.RedisClient.prototype);
 bluebird.promisifyAll(redis.Multi.prototype);
@@ -18,7 +17,7 @@ module.exports = function (options = {}) { // eslint-disable-line no-unused-vars
 		}
 		return context.app.service('api_key').get(context.data.api_key).then( api_data => {
 
-			return client.evalshaAsync(
+			return context.app.redisClient.evalshaAsync(
 				context.app.get('redis-get-address-index-sha1'), // SHA1 of script
 				2, // Number of keys being accessed
 				`queue:${context.data.api_key}`, // Queue

@@ -5,8 +5,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const logger = require('winston');
 const fs = require('fs');
-const redis = require('redis'),
-	redisClient = redis.createClient();
+const redis = require('redis');
 
 const insight = require('insight-watcher');
 
@@ -27,15 +26,16 @@ const app = express(feathers());
 app.configure(configuration());
 
 // Set up Redis
-redisClient.on("error", function (err) {
+app.redisClient = redis.createClient(app.get('redis_url'));
+app.redisClient.on("error", function (err) {
 	    console.log("Error " + err);
 });
-redisClient.flushdb(function(err, succeeded) {
+app.redisClient.flushdb(function(err, succeeded) {
 	console.log("Flushed database");
 
 	// Load LUA script to redis
 	lua_script = fs.readFileSync('./src/lua/get-address-index.lua', 'utf8');
-	redisClient.script('load', lua_script, function(err, replies) {
+	app.redisClient.script('load', lua_script, function(err, replies) {
 		app.set('redis-get-address-index-sha1', replies);
 	});
 })
