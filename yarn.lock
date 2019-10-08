@@ -851,9 +851,9 @@ double-ended-queue@^2.1.0-0:
   version "2.1.0-0"
   resolved "https://registry.yarnpkg.com/double-ended-queue/-/double-ended-queue-2.1.0-0.tgz#103d3527fd31528f40188130c841efdd78264e5c"
 
-"ducatuscore-lib@git+ssh://git@github.com/Ducatus/ducatuscore-lib.git":
+"ducatuscore-lib@git+ssh://git@github.com/DUCATUS-revival/ducatuscore-lib.git":
   version "5.0.0-beta.1"
-  resolved "git+ssh://git@github.com/Ducatus/ducatuscore-lib.git#c4aead40cd2ad60ec2662ce9b03a4b12c6fe8256"
+  resolved "git+ssh://git@github.com/DUCATUS-revival/ducatuscore-lib.git#c4aead40cd2ad60ec2662ce9b03a4b12c6fe8256"
   dependencies:
     bn.js "=2.0.4"
     bs58 "=2.0.0"
@@ -1573,9 +1573,9 @@ inquirer@^3.0.6:
     strip-ansi "^4.0.0"
     through "^2.3.6"
 
-"insight-watcher@git+ssh://git@github.com/Ducatus/insight-watcher.git":
+"insight-watcher@git+ssh://git@github.com/DUCATUS-revival/insight-watcher.git":
   version "1.0.0"
-  resolved "git+ssh://git@github.com/Ducatus/insight-watcher.git#3cf6d73bf366ec1ec19592ab78a27a457b3eea33"
+  resolved "git+ssh://git@github.com/DUCATUS-revival/insight-watcher.git#3cf6d73bf366ec1ec19592ab78a27a457b3eea33"
   dependencies:
     debug "^3.1.0"
     request "^2.83.0"
